@@ -1,0 +1,14 @@
+<h1>Wordgame</h1>
+
+<h3>
+	<% @game_grid.each do |letter| %>
+	<%= letter %>
+	<% end %>
+</h3>
+
+<form action="/score" method="get">
+  <label for="question">Your longest word: </label>
+  <input type="hidden" value=<%= @game_grid %> name="game_grid">
+  <input type="text" name="guess" placeholder="input">
+  <input type="submit">
+</form>
